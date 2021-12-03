@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-// const auth = require("../middleware/auth");
 const knex = require("../data/connection");
 
 router
@@ -20,8 +19,10 @@ router
 		knex("users")
 			.insert(req.body)
 			.then((user) => res.status(201).json(user))
-			.catch((err) => {
-				console.log(err);
+			.catch(() => {
+				res
+					.status(400)
+					.json({ message: `Error creating user ${req.params.id}` });
 			});
 	})
 	.put(
@@ -30,9 +31,7 @@ router
 			knex("users")
 				.where({ id: req.params.id })
 				.update(req.body)
-				.then(() => {
-					res.sendStatus(204);
-				})
+				.then(() => res.sendStatus(204))
 				.catch(() =>
 					res
 						.status(400)
@@ -46,9 +45,7 @@ router
 			knex("users")
 				.where({ id: req.params.id })
 				.del()
-				.then((data) => {
-					res.sendStatus(204);
-				})
+				.then(() => res.sendStatus(204))
 				.catch(() =>
 					res
 						.status(400)
