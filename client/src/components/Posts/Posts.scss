@@ -1,0 +1,134 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.post-list {
+	display: flex;
+	flex-direction: column;
+	border-top: solid 1px $silver;
+	margin: 0 1rem;
+	@include tablet {
+		margin: 0 2.25rem;
+	}
+	@include desktop {
+		margin: 0 7rem;
+	}
+	&__container {
+		display: flex;
+
+		flex-wrap: wrap;
+		@include tablet {
+			& a {
+				text-decoration: none;
+				width: 33%;
+			}
+		}
+		@include desktop {
+			overflow: auto;
+			border-top: none;
+			& a {
+				text-decoration: none;
+				width: 33%;
+			}
+		}
+	}
+	&__card {
+		display: flex;
+		padding: 0.5rem;
+		&:hover {
+			box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+		}
+	}
+	&__heading {
+		@include text-section-header($silver, left);
+
+		color: $silver;
+		@include tablet {
+			padding: 1rem 0;
+		}
+		@include desktop {
+			padding: 1rem 0;
+		}
+	}
+	&__image {
+		height: 4rem;
+		width: 4rem;
+		border-radius: 4px;
+		object-fit: cover;
+	}
+	&--info {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		@include desktop {
+		}
+	}
+	&--title {
+		@include text-labels-buttons($plantsocial-dark-black, left);
+		margin: 0;
+	}
+	&--channel {
+		@include text-body-copy($plantsocial-dark-black, left);
+		margin: 0;
+	}
+	&--trending {
+		@include text-labels-buttons($plantsocial-black, left);
+		min-width: 100%;
+		display: flex;
+		& span {
+			text-align: left;
+		}
+	}
+	&__wrapper {
+		@include mobile {
+			display: none;
+		}
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		margin-left: 1rem;
+	}
+}
+.recommend {
+	color: var(--color-grey-dark-3);
+
+	display: flex;
+	align-items: center;
+	&__friends {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		& p {
+			@include text-body-copy($plantsocial-black, left);
+			margin: 0;
+			margin-right: 1rem;
+		}
+	}
+	&__photo {
+		box-sizing: content-box;
+		height: 1.5rem;
+		width: 1.5rem;
+		border-radius: 20%;
+		border: 3px solid #fff;
+
+		&:not(:last-child) {
+			margin-right: -1rem;
+		}
+		&:hover {
+			animation-name: moveLeft;
+			animation-duration: 1s;
+			animation-timing-function: ease;
+		}
+	}
+}
+
+@keyframes moveLeft {
+	0% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(6px);
+	}
+}

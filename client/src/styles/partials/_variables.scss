@@ -1,0 +1,31 @@
+//min-width: 1280px
+$desktop--breakpoint: 1280px;
+
+//min-wdth: 768px & max-width: 1279px
+$tablet--breakpoint-min: 768px;
+$tablet--breakpoint-max: 1279px;
+
+//max-width: 767px
+$mobile--breakpoint: 767px;
+
+//fonts
+@font-face {
+	font-family: "Avenir Regular";
+	src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+	font-family: "Avenir Bold";
+	src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
+}
+
+//primary colors
+$plantsocial-black: #323232;
+$plantsocial-green: #0095ff;
+$silver: hsl(0, 0%, 69%);
+$white: #ffffff;
+
+//secondary colors
+$plantsocial-dark-black: #000000;
+$plantsocial-dark-green: #0065ad;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;

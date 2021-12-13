@@ -1,0 +1,14 @@
+@use "../styles/partials/mixins" as *;
+
+.container__flex {
+	@include desktop {
+		// &--row {
+		// 	display: flex;
+		// }
+		// &--column {
+		// 	display: flex;
+		// 	flex-direction: column;
+		// 	width: 170vw;
+		// }
+	}
+}

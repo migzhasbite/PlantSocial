@@ -1,0 +1,113 @@
+@use "./variables" as *;
+
+//different device specs
+@mixin mobile {
+	@media (max-width: $mobile--breakpoint) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (min-width: $tablet--breakpoint-min) and (max-width: $tablet--breakpoint-max) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop--breakpoint) {
+		@content;
+	}
+}
+
+@mixin text-page-header-color-talign($font-color, $talign) {
+	color: $font-color;
+	text-align: $talign;
+	font-family: "Avenir";
+	font-weight: 700;
+	@include desktop {
+		font-size: 2.0625rem;
+		line-height: 2.75rem;
+	}
+	@include tablet {
+		font-size: 2.0625rem;
+		line-height: 2.75rem;
+	}
+	@include mobile {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+}
+//SECTION HEADER
+@mixin text-section-header($font-color, $talign) {
+	color: $font-color;
+	text-align: $talign;
+	font-family: "Avenir";
+	font-weight: 700;
+	@include desktop {
+		font-size: 0.75rem;
+		line-height: 1.25rem;
+	}
+	@include tablet {
+		font-size: 0.75rem;
+		line-height: 1.25rem;
+	}
+	@include mobile {
+		font-size: 0.75rem;
+		line-height: 1.25rem;
+	}
+}
+
+//SUBHEADER
+@mixin text-subheader($font-color, $talign) {
+	color: $font-color;
+	text-align: $talign;
+	font-family: "Avenir";
+	font-weight: 700;
+	@include desktop {
+		font-size: 0.875rem;
+		line-height: 1.375rem;
+	}
+	@include tablet {
+		font-size: 0.875rem;
+		line-height: 1.375rem;
+	}
+	@include mobile {
+		font-size: 0.8125rem;
+		line-height: 1.125rem;
+	}
+}
+//BODY COPY
+@mixin text-body-copy($font-color, $talign) {
+	color: $font-color;
+	text-align: $talign;
+	font-family: "Avenir";
+	font-weight: 400;
+	@include desktop {
+		font-size: 0.875rem;
+		line-height: 1.375rem;
+	}
+	@include tablet {
+		font-size: 0.875rem;
+		line-height: 1.375rem;
+	}
+	@include mobile {
+		font-size: 0.8125rem;
+		line-height: 1.125rem;
+	}
+}
+//LABELS & BUTTONS
+@mixin text-labels-buttons($font-color, $talign) {
+	color: $font-color;
+	text-align: $talign;
+	font-family: "Avenir";
+	font-weight: 700;
+	font-size: 0.625rem;
+	line-height: 1.25rem;
+	@include tablet {
+		font-size: 0.75rem;
+		line-height: 1.25rem;
+	}
+	@include desktop {
+		font-size: 0.75rem;
+		line-height: 1.25rem;
+	}
+}

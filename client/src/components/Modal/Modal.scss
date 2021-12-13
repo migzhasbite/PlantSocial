@@ -1,0 +1,158 @@
+.modal__container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgba($color: black, $alpha: 0.35);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.2s ease;
+
+	&--top {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-bottom: 1px solid white;
+		position: relative;
+	}
+	&--bottom {
+		h3 {
+			margin: 1rem 0;
+		}
+		h4 {
+			margin-bottom: 1rem;
+		}
+	}
+	&--left {
+		width: 50%;
+	}
+	&--right {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		img {
+			width: 10rem;
+		}
+	}
+}
+.modal {
+	position: relative;
+	.close {
+		position: absolute;
+		right: 2rem;
+		top: 1rem;
+		background-color: transparent;
+	}
+	&__column {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		button {
+			min-width: 50px;
+		}
+	}
+	width: 90%;
+	height: auto;
+	padding: 2rem;
+	border-radius: 32px;
+	transform: translateY(600px);
+	transition: all 2s ease;
+
+	&__header {
+		position: relative;
+
+		&--title {
+			text-align: center;
+		}
+	}
+	&__content {
+		padding: 2rem 0 1rem 0;
+
+		& p {
+			font-size: 12px;
+		}
+	}
+	&__footer {
+		padding-bottom: 0;
+		display: flex;
+		justify-content: flex-start;
+
+		button {
+			display: flex;
+			padding: 0.5rem;
+			border-radius: 32px;
+
+			&:focus {
+				color: black;
+				background-color: white;
+			}
+		}
+		.submit {
+			margin: 1rem;
+			background-color: black;
+			color: white;
+			&:hover {
+				background-color: rgba(54, 67, 72, 0.8);
+			}
+		}
+	}
+	&--close {
+		margin: 1rem;
+		background-color: black;
+		color: white;
+		&:hover {
+			background-color: rgba(54, 67, 72, 0.8);
+		}
+	}
+	&--responses {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		button {
+			display: flex;
+			margin: 1rem;
+			padding: 0.5rem;
+			border-radius: 32px;
+			background-color: black;
+			color: white;
+			height: 48px;
+			width: 212px;
+			align-items: center;
+			justify-content: center;
+
+			&:hover {
+				background-color: rgba(152, 152, 152, 0.8);
+			}
+			&:focus {
+				color: black;
+				background-color: white;
+				border: 1px black solid;
+				font-weight: 700;
+			}
+		}
+	}
+}
+.modal__container.show {
+	visibility: visible;
+	opacity: 1;
+
+	.modal {
+		transform: translateY(0);
+	}
+}
+button {
+	min-width: 100px;
+	max-height: 65px;
+	justify-content: center;
+	height: 48px;
+	width: 212px;
+	align-items: center;
+	justify-content: center;
+}
