@@ -24,6 +24,7 @@ router.get("/", (_req, res) => {
 
 router.get("/:id", (req, res) => {
 	const { id } = req.params;
+	console.log(id);
 	const post = postData.find((post) => {
 		return post.id === id;
 	});
